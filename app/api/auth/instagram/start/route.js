@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request) {
   const origin = new URL(request.url).origin;
   const redirectUri = `${origin}/api/auth/instagram/callback`;

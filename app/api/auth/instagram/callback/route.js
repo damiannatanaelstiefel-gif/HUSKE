@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { exchangeCodeForShortToken, exchangeForLongLivedToken } from '../../../../../lib/instagram';
 import { setToken } from '../../../../../lib/kv';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request) {
   const url = new URL(request.url);
   const code = url.searchParams.get('code');

@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getToken, setToken } from '../../../../lib/kv';
 import { refreshLongLivedToken } from '../../../../lib/instagram';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request) {
   const authHeader = request.headers.get('authorization');
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
