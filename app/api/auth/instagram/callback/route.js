@@ -16,10 +16,24 @@ export async function GET(request) {
 
   try {
     const redirectUri = `${url.origin}/api/auth/instagram/callback`;
-    const { access_token: shortToken } = await exchangeCodeForShortToken(code, redirectUri);
-    const { access_token: longToken } = await exchangeForLongLivedToken(shortToken);
+    const shortTokenData = await exchangeCodeForShortToken(code, redirectUri);
+    const shortToken = shortTokenData.access_token || shortTokenData.data?.[0]?.access_token;
+
+    if (!shortToken) {
+      const detail = JSON.stringify(shortTokenData).slice(0, 300);
+      return NextResponse.redirect(`${url.origin}/?ig_error=${encodeURIComponent(`no_short_token ${detail}`)}`);
+    }
+
+    const longTokenData = await exchangeForLongLivedToken(shortToken);
+    const longToken = longTokenData.access_token;
+
+    if (!longToken) {
+      const detail = JSON.stringify(longTokenData).slice(0, 300);
+      return NextResponse.redirect(`${url.origin}/?ig_error=${encodeURIComponent(`no_long_token ${detail}`)}`);
+    }
+
     await setToken(longToken);
-    return NextResponse.redirect(`${url.origin}/?ig_connected=1`);
+    return NextResponse.redirect(`${url.origin}/?ig_connected=1&len=${longToken.length}`);
   } catch (err) {
     return NextResponse.redirect(`${url.origin}/?ig_error=${encodeURIComponent(err.message)}`);
   }
