@@ -2,7 +2,7 @@ import { getCategorizedMedia } from '../lib/instagram';
 import PostGrid from '../components/PostGrid';
 import RevealScript from '../components/RevealScript';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage({ searchParams }) {
   const { connected, xv, bodas } = await getCategorizedMedia();
