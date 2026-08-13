@@ -36,5 +36,13 @@ export async function GET() {
     writeReadRoundtrip = `error: ${err.message}`;
   }
 
-  return NextResponse.json({ present, tokenPresent, readError, writeReadRoundtrip });
+  let sameKeyRoundtrip = null;
+  try {
+    await kv.set('ig:long_lived_token', 'debug-test-value-123');
+    sameKeyRoundtrip = await kv.get('ig:long_lived_token');
+  } catch (err) {
+    sameKeyRoundtrip = `error: ${err.message}`;
+  }
+
+  return NextResponse.json({ present, tokenPresent, readError, writeReadRoundtrip, sameKeyRoundtrip });
 }
