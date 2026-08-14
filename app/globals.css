@@ -205,14 +205,6 @@ nav{
 .btn-primary:hover,.btn-primary:focus-visible{opacity:0.72;outline:none;}
 .btn-primary svg{width:15px;height:15px;}
 
-.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.btn-secondary{
-  border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);
-  padding:14px 30px;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
-  display:inline-flex;align-items:center;gap:10px;transition:background .2s,color .2s;
-}
-.btn-secondary:hover,.btn-secondary:focus-visible{background:var(--ink);color:var(--paper);outline:none;}
-
 .about{padding:64px 0 96px;}
 .about-grid{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:64px;align-items:start;}
 @media (max-width:800px){.about-grid{grid-template-columns:1fr;gap:32px;}}
@@ -222,12 +214,9 @@ nav{
 .about-text h1{margin:0 0 28px;}
 .about-text p{color:var(--ink-soft);font-size:1rem;line-height:1.75;margin:0 0 20px;max-width:60ch;}
 .about-text p:last-child{margin-bottom:0;}
-.btn-secondary svg{width:15px;height:15px;}
 
 footer{border-top:1px solid var(--line);padding:32px 0;}
 .footrow{
-  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  display:flex;justify-content:center;align-items:center;
   font-size:0.76rem;color:var(--ink-soft);letter-spacing:0.03em;
 }
-.footrow a{color:var(--ink-soft);border-bottom:1px solid transparent;}
-.footrow a:hover,.footrow a:focus-visible{color:var(--ink);border-color:var(--ink);outline:none;}

@@ -96,24 +96,9 @@ export default async function HomePage({ searchParams }) {
       <section className="strip reveal" id="nosotros">
         <div className="wrap">
           <div className="tag">Nosotros</div>
-          <div className="cta-row">
-            <a className="btn-primary" href="/nosotros">
-              Conócenos
-            </a>
-            <a
-              className="btn-secondary"
-              href="https://www.instagram.com/huske.producciones/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.2" cy="6.8" r="1" />
-              </svg>
-              @huske.producciones
-            </a>
-          </div>
+          <a className="btn-primary" href="/nosotros">
+            Conócenos
+          </a>
         </div>
       </section>
 
