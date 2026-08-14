@@ -2,11 +2,8 @@
 
 import { useState } from 'react';
 
-const PATTERN = ['tall', 'normal', 'tall', 'wide'];
-
-function Card({ post, index, reveal, uniform }) {
-  const shape = uniform ? 'normal' : PATTERN[index % PATTERN.length];
-  const className = `card${reveal ? ' reveal' : ''}${shape === 'tall' ? ' tall' : ''}${shape === 'wide' ? ' wide' : ''}`;
+function Card({ post, index, reveal }) {
+  const className = `card${reveal ? ' reveal' : ''}`;
   const style = reveal ? { transitionDelay: `${Math.min(index * 70, 350)}ms` } : undefined;
 
   return (
@@ -18,7 +15,8 @@ function Card({ post, index, reveal, uniform }) {
       style={style}
       aria-label={post.caption ? `Ver "${post.caption}" en Instagram` : 'Ver publicación en Instagram'}
     >
-      <span className="frame" style={{ backgroundImage: `url(${post.cover})` }} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="frame" src={post.cover} alt="" loading="lazy" />
       <span className="veil" />
       <span className="card-info">
         {post.caption && <span className="cap">{post.caption}</span>}
@@ -37,11 +35,10 @@ function Card({ post, index, reveal, uniform }) {
 // preview: { type: 'firstLast' | 'last', count: number }
 // 'firstLast' muestra las N mas recientes + las N mas antiguas
 // 'last' muestra solo las N mas recientes
-// size: 'medium' (Bodas/XV) o 'compact' (Books) para miniaturas mas chicas y uniformes
+// size: 'medium' (Bodas/XV) o 'compact' (Books) para columnas mas angostas
 // scroll: true para tira horizontal con scroll en vez de grid + boton Ver mas
 export default function PostGrid({ posts, emptyLabel, preview, size, scroll }) {
   const [expanded, setExpanded] = useState(false);
-  const uniform = size === 'compact' || size === 'medium';
   const gridSizeClass = size === 'compact' ? ' grid-compact' : size === 'medium' ? ' grid-medium' : '';
 
   if (!posts.length) {
@@ -52,7 +49,7 @@ export default function PostGrid({ posts, emptyLabel, preview, size, scroll }) {
     return (
       <div className="grid-scroll">
         {posts.map((post, i) => (
-          <Card key={post.id} post={post} index={i} reveal uniform={uniform} />
+          <Card key={post.id} post={post} index={i} reveal />
         ))}
       </div>
     );
@@ -76,7 +73,7 @@ export default function PostGrid({ posts, emptyLabel, preview, size, scroll }) {
     <>
       <div className={`grid${gridSizeClass}`}>
         {displayed.map((post, i) => (
-          <Card key={post.id} post={post} index={i} reveal={initialVisibleIds.has(post.id)} uniform={uniform} />
+          <Card key={post.id} post={post} index={i} reveal={initialVisibleIds.has(post.id)} />
         ))}
       </div>
       {hiddenCount > 0 && !expanded && (
