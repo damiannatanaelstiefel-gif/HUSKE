@@ -17,8 +17,8 @@ export default async function HomePage({ searchParams }) {
             <img src="/logo-black.png" alt="Huske" />
           </a>
           <div className="navlinks">
-            <a href="#xv">XV Años</a>
             <a href="#bodas">Bodas</a>
+            <a href="#xv">XV Años</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">Contacto</a>
           </div>
@@ -42,10 +42,7 @@ export default async function HomePage({ searchParams }) {
         <div className="wrap">
           <img className="logo-big reveal" src="/logo-black.png" alt="Huske" />
           <div className="eyebrow reveal">Rosario, Argentina</div>
-          <p className="reveal">
-            Recuerdos únicos, cuidado profesional, documentamos 15 años y bodas con una mirada
-            cinemática.
-          </p>
+          <p className="reveal">Recuerdos únicos, cuidado profesional.</p>
           <div className="hero-scroll reveal">
             <span>Explorar</span>
             <span className="line" />
@@ -77,19 +74,6 @@ export default async function HomePage({ searchParams }) {
         </div>
       )}
 
-      <section className="chapter mood-xv" id="xv">
-        <div className="wrap">
-          <div className="chapter-head reveal">
-            <h1 className="chapter-title">15 años</h1>
-          </div>
-          <PostGrid
-            posts={xv}
-            emptyLabel="Todavía no hay publicaciones etiquetadas #huskexv"
-            preview={{ type: 'firstLast', count: 4 }}
-          />
-        </div>
-      </section>
-
       <section className="chapter mood-bodas" id="bodas">
         <div className="wrap">
           <div className="chapter-head reveal">
@@ -99,6 +83,19 @@ export default async function HomePage({ searchParams }) {
             posts={bodas}
             emptyLabel="Todavía no hay publicaciones etiquetadas #huskebodas"
             preview={{ type: 'last', count: 4 }}
+          />
+        </div>
+      </section>
+
+      <section className="chapter mood-xv" id="xv">
+        <div className="wrap">
+          <div className="chapter-head reveal">
+            <h1 className="chapter-title">XV Años</h1>
+          </div>
+          <PostGrid
+            posts={xv}
+            emptyLabel="Todavía no hay publicaciones etiquetadas #huskexv"
+            preview={{ type: 'firstLast', count: 4 }}
           />
         </div>
       </section>
