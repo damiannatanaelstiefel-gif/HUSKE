@@ -87,6 +87,7 @@ export default async function HomePage({ searchParams }) {
             posts={bodas}
             emptyLabel="Todavía no hay publicaciones etiquetadas #huskebodas"
             preview={{ type: 'last', count: 4 }}
+            size="medium"
           />
         </div>
       </section>
@@ -100,6 +101,7 @@ export default async function HomePage({ searchParams }) {
             posts={xv}
             emptyLabel="Todavía no hay publicaciones etiquetadas #huskexv"
             preview={{ type: 'last', count: 4 }}
+            size="medium"
           />
 
           <div className="subsection reveal">
