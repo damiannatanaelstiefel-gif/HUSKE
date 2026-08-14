@@ -5,7 +5,7 @@ import RevealScript from '../components/RevealScript';
 export const revalidate = 300;
 
 export default async function HomePage({ searchParams }) {
-  const { connected, xv, bodas } = await getCategorizedMedia();
+  const { connected, xv, bodas, bookXv } = await getCategorizedMedia();
   const igError = searchParams?.ig_error;
   const igConnected = searchParams?.ig_connected;
 
@@ -97,6 +97,16 @@ export default async function HomePage({ searchParams }) {
             emptyLabel="Todavía no hay publicaciones etiquetadas #huskexv"
             preview={{ type: 'last', count: 4 }}
           />
+
+          <div className="subsection reveal">
+            <h2 className="subsection-title">Books</h2>
+            <PostGrid
+              posts={bookXv}
+              emptyLabel="Todavía no hay publicaciones etiquetadas #huskebookxv"
+              preview={{ type: 'last', count: 4 }}
+              size="compact"
+            />
+          </div>
         </div>
       </section>
 

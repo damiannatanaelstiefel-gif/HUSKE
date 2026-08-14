@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 const PATTERN = ['tall', 'normal', 'tall', 'wide'];
 
-function Card({ post, index, reveal }) {
-  const shape = PATTERN[index % PATTERN.length];
+function Card({ post, index, reveal, compact }) {
+  const shape = compact ? 'normal' : PATTERN[index % PATTERN.length];
   const className = `card${reveal ? ' reveal' : ''}${shape === 'tall' ? ' tall' : ''}${shape === 'wide' ? ' wide' : ''}`;
 
   return (
@@ -35,8 +35,10 @@ function Card({ post, index, reveal }) {
 // preview: { type: 'firstLast' | 'last', count: number }
 // 'firstLast' muestra las N mas recientes + las N mas antiguas
 // 'last' muestra solo las N mas recientes
-export default function PostGrid({ posts, emptyLabel, preview }) {
+// size: 'compact' para miniaturas mas chicas (ej. books)
+export default function PostGrid({ posts, emptyLabel, preview, size }) {
   const [expanded, setExpanded] = useState(false);
+  const compact = size === 'compact';
 
   if (!posts.length) {
     return <p className="empty-note reveal">{emptyLabel}</p>;
@@ -58,9 +60,9 @@ export default function PostGrid({ posts, emptyLabel, preview }) {
 
   return (
     <>
-      <div className="grid">
+      <div className={`grid${compact ? ' grid-compact' : ''}`}>
         {displayed.map((post, i) => (
-          <Card key={post.id} post={post} index={i} reveal={initialVisibleIds.has(post.id)} />
+          <Card key={post.id} post={post} index={i} reveal={initialVisibleIds.has(post.id)} compact={compact} />
         ))}
       </div>
       {hiddenCount > 0 && !expanded && (
