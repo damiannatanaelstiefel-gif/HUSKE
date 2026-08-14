@@ -4,6 +4,7 @@ import RevealScript from '../components/RevealScript';
 import HeroVideo from '../components/HeroVideo';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
+import WhatsAppLinks from '../components/WhatsAppLinks';
 
 export const revalidate = 300;
 
@@ -30,6 +31,9 @@ export default async function HomePage({ searchParams }) {
             <a className="btn-primary" href="/agenda">
               Agenda tu evento
             </a>
+            <div className="contact-whatsapp">
+              <WhatsAppLinks />
+            </div>
           </div>
           <div className="hero-scroll reveal">
             <span>Explorar</span>
