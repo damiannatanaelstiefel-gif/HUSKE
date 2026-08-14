@@ -99,21 +99,13 @@ nav{
 
 .chapter{padding:64px 0 80px;}
 .chapter-head{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  gap:32px;margin-bottom:48px;flex-wrap:wrap;
+  margin-bottom:48px;
   border-bottom:1px solid var(--line);padding-bottom:28px;
 }
-.chapter-num{font-family:'Fraunces',serif;font-style:italic;font-size:0.98rem;color:var(--ink-soft);}
-.chapter.mood-xv .chapter-num{color:var(--amber);}
-.chapter.mood-bodas .chapter-num{color:var(--rose);}
 .chapter-title{
   font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.1rem,4.6vw,3.4rem);
   line-height:1;letter-spacing:-0.01em;text-wrap:balance;margin:0;
 }
-.chapter-title em{font-style:italic;}
-.chapter.mood-xv .chapter-title em{color:var(--amber);}
-.chapter.mood-bodas .chapter-title em{color:var(--rose);}
-.chapter-desc{max-width:300px;font-size:0.94rem;line-height:1.6;color:var(--ink-soft);margin:0;}
 
 .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;}
 @media (max-width:900px){.grid{grid-template-columns:1fr 1fr;}}
@@ -153,6 +145,15 @@ nav{
   color:var(--ink-soft);font-size:0.9rem;padding:40px 0;text-align:center;
   border:1px dashed var(--line);border-radius:4px;
 }
+
+.grid-more{display:flex;justify-content:center;margin-top:32px;}
+.btn-more{
+  font-family:'Archivo',sans-serif;
+  border:1px solid var(--ink);border-radius:999px;background:transparent;
+  padding:11px 30px;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+  color:var(--ink);cursor:pointer;transition:background .2s,color .2s;
+}
+.btn-more:hover,.btn-more:focus-visible{background:var(--ink);color:var(--paper);outline:none;}
 
 .strip{padding:88px 0;text-align:center;border-top:1px solid var(--line);margin-top:80px;}
 .strip .tag{font-size:0.76rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:22px;}

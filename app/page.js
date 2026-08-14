@@ -41,11 +41,10 @@ export default async function HomePage({ searchParams }) {
       <header className="hero" id="top">
         <div className="wrap">
           <img className="logo-big reveal" src="/logo-black.png" alt="Huske" />
-          <div className="eyebrow reveal">Buenos Aires · Argentina</div>
+          <div className="eyebrow reveal">Rosario, Argentina</div>
           <p className="reveal">
-            Recuerdos únicos, cuidado profesional. Documentamos XV años, bodas y books con una
-            mirada editorial — cada imagen de este sitio está enlazada a su publicación original
-            en Instagram.
+            Recuerdos únicos, cuidado profesional, documentamos 15 años y bodas con una mirada
+            cinemática.
           </p>
           <div className="hero-scroll reveal">
             <span>Explorar</span>
@@ -81,34 +80,26 @@ export default async function HomePage({ searchParams }) {
       <section className="chapter mood-xv" id="xv">
         <div className="wrap">
           <div className="chapter-head reveal">
-            <div>
-              <div className="chapter-num">Capítulo I</div>
-              <h1 className="chapter-title">
-                XV <em>Años</em>
-              </h1>
-            </div>
-            <p className="chapter-desc">
-              Fiestas, books previos y el minuto a minuto de una noche que se cuenta una sola vez.
-            </p>
+            <h1 className="chapter-title">15 años</h1>
           </div>
-          <PostGrid posts={xv} emptyLabel="Todavía no hay publicaciones etiquetadas #huskexv" />
+          <PostGrid
+            posts={xv}
+            emptyLabel="Todavía no hay publicaciones etiquetadas #huskexv"
+            preview={{ type: 'firstLast', count: 4 }}
+          />
         </div>
       </section>
 
       <section className="chapter mood-bodas" id="bodas">
         <div className="wrap">
           <div className="chapter-head reveal">
-            <div>
-              <div className="chapter-num">Capítulo II</div>
-              <h1 className="chapter-title">
-                Bodas <em>&amp; Books</em>
-              </h1>
-            </div>
-            <p className="chapter-desc">
-              Editorial de casamientos: previa, ceremonia y fiesta, con una estética atemporal.
-            </p>
+            <h1 className="chapter-title">Bodas</h1>
           </div>
-          <PostGrid posts={bodas} emptyLabel="Todavía no hay publicaciones etiquetadas #huskebodas" />
+          <PostGrid
+            posts={bodas}
+            emptyLabel="Todavía no hay publicaciones etiquetadas #huskebodas"
+            preview={{ type: 'last', count: 4 }}
+          />
         </div>
       </section>
 
