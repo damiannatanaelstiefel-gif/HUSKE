@@ -4,6 +4,7 @@ import RevealScript from '../components/RevealScript';
 import HeroVideo from '../components/HeroVideo';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
+import WhatsAppLinks from '../components/WhatsAppLinks';
 
 export const revalidate = 300;
 
@@ -25,6 +26,10 @@ export default async function HomePage({ searchParams }) {
           </a>
           <div className="hero-video reveal">
             <HeroVideo />
+          </div>
+          <div className="contact-block reveal" id="contacto">
+            <div className="tag">Contacto</div>
+            <WhatsAppLinks />
           </div>
           <div className="hero-scroll reveal">
             <span>Explorar</span>
