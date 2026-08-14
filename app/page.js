@@ -103,8 +103,8 @@ export default async function HomePage({ searchParams }) {
             <PostGrid
               posts={bookXv}
               emptyLabel="Todavía no hay publicaciones etiquetadas #huskebookxv"
-              preview={{ type: 'last', count: 4 }}
               size="compact"
+              scroll
             />
           </div>
         </div>

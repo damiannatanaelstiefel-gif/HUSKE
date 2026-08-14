@@ -131,6 +131,18 @@ nav{
 .grid-compact .card-info .meta{font-size:0.62rem;}
 @media (max-width:900px){.grid-compact{grid-template-columns:repeat(4,1fr);}}
 @media (max-width:560px){.grid-compact{grid-template-columns:repeat(3,1fr);}}
+
+.grid-scroll{
+  display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;
+  scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+}
+.grid-scroll .card{flex:0 0 auto;width:150px;aspect-ratio:4/5;scroll-snap-align:start;}
+.grid-scroll .card-info{left:10px;right:10px;bottom:10px;}
+.grid-scroll .card-info .cap{font-size:0.8rem;}
+.grid-scroll .card-info .meta{font-size:0.62rem;}
+.grid-scroll::-webkit-scrollbar{height:4px;}
+.grid-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px;}
+@media (max-width:560px){.grid-scroll .card{width:120px;}}
 .card .frame{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s cubic-bezier(.2,.8,.2,1);}
 .card:hover .frame,.card:focus-visible .frame{transform:scale(1.045);}
 .card .veil{

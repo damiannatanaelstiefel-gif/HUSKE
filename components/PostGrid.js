@@ -36,12 +36,23 @@ function Card({ post, index, reveal, compact }) {
 // 'firstLast' muestra las N mas recientes + las N mas antiguas
 // 'last' muestra solo las N mas recientes
 // size: 'compact' para miniaturas mas chicas (ej. books)
-export default function PostGrid({ posts, emptyLabel, preview, size }) {
+// scroll: true para tira horizontal con scroll en vez de grid + boton Ver mas
+export default function PostGrid({ posts, emptyLabel, preview, size, scroll }) {
   const [expanded, setExpanded] = useState(false);
   const compact = size === 'compact';
 
   if (!posts.length) {
     return <p className="empty-note reveal">{emptyLabel}</p>;
+  }
+
+  if (scroll) {
+    return (
+      <div className="grid-scroll">
+        {posts.map((post, i) => (
+          <Card key={post.id} post={post} index={i} reveal compact={compact} />
+        ))}
+      </div>
+    );
   }
 
   let initialVisible = posts;
