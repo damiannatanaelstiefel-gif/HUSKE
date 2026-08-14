@@ -2,6 +2,8 @@ import { getCategorizedMedia } from '../lib/instagram';
 import PostGrid from '../components/PostGrid';
 import RevealScript from '../components/RevealScript';
 import HeroVideo from '../components/HeroVideo';
+import SiteNav from '../components/SiteNav';
+import SiteFooter from '../components/SiteFooter';
 
 export const revalidate = 300;
 
@@ -12,32 +14,7 @@ export default async function HomePage({ searchParams }) {
 
   return (
     <>
-      <nav>
-        <div className="navrow">
-          <a className="brand" href="#top" aria-label="Huske — inicio">
-            <img src="/logo-black.png" alt="Huske" />
-          </a>
-          <div className="navlinks">
-            <a href="#bodas">Bodas</a>
-            <a href="#xv">XV Años</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#contacto">Contacto</a>
-          </div>
-          <a
-            className="ig-btn"
-            href="https://www.instagram.com/huske.producciones/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.2" cy="6.8" r="1" />
-            </svg>
-            Instagram
-          </a>
-        </div>
-      </nav>
+      <SiteNav />
 
       <header className="hero" id="top">
         <div className="wrap">
@@ -119,30 +96,28 @@ export default async function HomePage({ searchParams }) {
       <section className="strip reveal" id="nosotros">
         <div className="wrap">
           <div className="tag">Nosotros</div>
-          <a
-            className="btn-primary"
-            href="https://www.instagram.com/huske.producciones/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.2" cy="6.8" r="1" />
-            </svg>
-            @huske.producciones
-          </a>
+          <div className="cta-row">
+            <a className="btn-primary" href="/nosotros">
+              Conócenos
+            </a>
+            <a
+              className="btn-secondary"
+              href="https://www.instagram.com/huske.producciones/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="1" />
+              </svg>
+              @huske.producciones
+            </a>
+          </div>
         </div>
       </section>
 
-      <footer id="contacto">
-        <div className="wrap footrow reveal">
-          <span>HUSKE Producciones © 2026 — Bodas · XV · Eventos sociales</span>
-          <a href="https://www.instagram.com/huske.producciones/" target="_blank" rel="noopener noreferrer">
-            Escribinos por Instagram →
-          </a>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <RevealScript />
     </>
