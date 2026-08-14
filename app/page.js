@@ -10,7 +10,6 @@ export const revalidate = 300;
 export default async function HomePage({ searchParams }) {
   const { connected, xv, bodas, bookXv } = await getCategorizedMedia();
   const igError = searchParams?.ig_error;
-  const igConnected = searchParams?.ig_connected;
 
   return (
     <>
@@ -39,13 +38,6 @@ export default async function HomePage({ searchParams }) {
           <div className="connect-box">
             <span>Todavía no conectaste la cuenta de Instagram — las secciones de abajo van a estar vacías hasta hacerlo.</span>
             <a href="/api/auth/instagram/start">Conectar Instagram →</a>
-          </div>
-        </div>
-      )}
-      {igConnected && (
-        <div className="wrap connect-note">
-          <div className="connect-box">
-            <span>Cuenta conectada correctamente. Etiquetá tus posts con #huskexv o #huskebodas para que aparezcan abajo.</span>
           </div>
         </div>
       )}
