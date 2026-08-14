@@ -83,6 +83,7 @@ nav{
   max-width:480px;margin:0 auto;
   font-size:1.02rem;line-height:1.65;color:var(--ink-soft);
 }
+.hero .btn-primary{margin-top:28px;}
 .hero-video{
   max-width:900px;margin:48px auto 0;border-radius:2px;overflow:hidden;
   background:var(--card);

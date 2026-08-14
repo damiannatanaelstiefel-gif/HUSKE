@@ -21,6 +21,9 @@ export default async function HomePage({ searchParams }) {
           <img className="logo-big reveal" src="/logo-black.png" alt="Huske" />
           <div className="eyebrow reveal">Rosario, Argentina</div>
           <p className="reveal">Recuerdos únicos, cuidado profesional.</p>
+          <a className="btn-primary reveal" href="/nosotros">
+            Conócenos
+          </a>
           <div className="hero-video reveal">
             <HeroVideo />
           </div>
