@@ -155,7 +155,7 @@ nav{
 .grid-scroll::-webkit-scrollbar{height:4px;}
 .grid-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px;}
 @media (max-width:560px){.grid-scroll .card{width:120px;}}
-.card .frame{display:block;width:100%;height:auto;transition:transform .7s cubic-bezier(.2,.8,.2,1);}
+.card .frame{display:block;width:100%;height:auto;aspect-ratio:4/5;transition:transform .7s cubic-bezier(.2,.8,.2,1);}
 .card:hover .frame,.card:focus-visible .frame{transform:scale(1.045);}
 .card .veil{
   position:absolute;inset:0;

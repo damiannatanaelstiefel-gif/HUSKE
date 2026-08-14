@@ -16,7 +16,7 @@ function Card({ post, index, reveal }) {
       aria-label={post.caption ? `Ver "${post.caption}" en Instagram` : 'Ver publicación en Instagram'}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="frame" src={post.cover} alt="" loading="lazy" />
+      <img className="frame" src={post.cover} alt="" />
       <span className="veil" />
       <span className="card-info">
         {post.caption && <span className="cap">{post.caption}</span>}
