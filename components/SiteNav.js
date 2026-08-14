@@ -9,7 +9,7 @@ export default function SiteNav() {
           <a href="/#bodas">Bodas</a>
           <a href="/#xv">XV Años</a>
           <a href="/nosotros">Nosotros</a>
-          <a href="/#contacto">Contacto</a>
+          <a href="/agenda">Agenda</a>
         </div>
         <a
           className="ig-btn"

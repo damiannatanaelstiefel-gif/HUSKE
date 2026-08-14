@@ -216,6 +216,23 @@ nav{
 .about-text p{color:var(--ink-soft);font-size:1rem;line-height:1.75;margin:0 0 20px;max-width:60ch;}
 .about-text p:last-child{margin-bottom:0;}
 
+.agenda{padding:64px 0 96px;}
+.agenda-wrap{max-width:720px;margin:0 auto;}
+.agenda-wrap .chapter-title{text-wrap:balance;}
+.agenda-intro{color:var(--ink-soft);font-size:1.05rem;line-height:1.75;margin:24px 0 56px;max-width:60ch;}
+.agenda-block{margin-bottom:40px;padding:32px;border-left:3px solid var(--ink-soft);}
+.agenda-block.mood-bodas{background:color-mix(in srgb, var(--rose) 8%, var(--paper));border-left-color:var(--rose);}
+.agenda-block.mood-xv{background:color-mix(in srgb, var(--amber) 8%, var(--paper));border-left-color:var(--amber);}
+.agenda-block-title{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin:0 0 22px;}
+.agenda-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+.agenda-list li{position:relative;padding-left:20px;color:var(--ink-soft);font-size:0.95rem;line-height:1.6;}
+.agenda-list li::before{content:"";position:absolute;left:0;top:0.6em;width:6px;height:6px;border-radius:50%;background:var(--ink-soft);}
+.mood-bodas .agenda-list li::before{background:var(--rose);}
+.mood-xv .agenda-list li::before{background:var(--amber);}
+.agenda-note{color:var(--ink-soft);font-size:1rem;line-height:1.7;margin:0 0 56px;max-width:60ch;}
+.agenda-cta{text-align:center;padding-top:40px;border-top:1px solid var(--line);}
+.agenda-cta-text{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;margin:0 0 24px;color:var(--ink);text-wrap:balance;}
+
 footer{border-top:1px solid var(--line);padding:32px 0;}
 .footrow{
   display:flex;justify-content:center;align-items:center;
