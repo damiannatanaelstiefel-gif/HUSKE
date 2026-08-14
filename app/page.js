@@ -1,6 +1,7 @@
 import { getCategorizedMedia } from '../lib/instagram';
 import PostGrid from '../components/PostGrid';
 import RevealScript from '../components/RevealScript';
+import HeroVideo from '../components/HeroVideo';
 
 export const revalidate = 300;
 
@@ -43,6 +44,9 @@ export default async function HomePage({ searchParams }) {
           <img className="logo-big reveal" src="/logo-black.png" alt="Huske" />
           <div className="eyebrow reveal">Rosario, Argentina</div>
           <p className="reveal">Recuerdos únicos, cuidado profesional.</p>
+          <div className="hero-video reveal">
+            <HeroVideo />
+          </div>
           <div className="hero-scroll reveal">
             <span>Explorar</span>
             <span className="line" />

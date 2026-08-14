@@ -79,8 +79,14 @@ nav{
   max-width:480px;margin:0 auto;
   font-size:1.02rem;line-height:1.65;color:var(--ink-soft);
 }
+.hero-video{
+  max-width:900px;margin:48px auto 0;border-radius:2px;overflow:hidden;
+  background:var(--card);
+}
+.hero-video-el{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+
 .hero-scroll{
-  margin-top:56px;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
+  margin-top:48px;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
   color:var(--ink-soft);display:flex;flex-direction:column;align-items:center;gap:10px;
 }
 .hero-scroll .line{width:1px;height:34px;background:var(--ink-soft);opacity:0.5;animation:pulse 2.2s ease-in-out infinite;}
