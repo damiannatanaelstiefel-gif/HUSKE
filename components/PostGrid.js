@@ -7,6 +7,7 @@ const PATTERN = ['tall', 'normal', 'tall', 'wide'];
 function Card({ post, index, reveal, compact }) {
   const shape = compact ? 'normal' : PATTERN[index % PATTERN.length];
   const className = `card${reveal ? ' reveal' : ''}${shape === 'tall' ? ' tall' : ''}${shape === 'wide' ? ' wide' : ''}`;
+  const style = reveal ? { transitionDelay: `${Math.min(index * 70, 350)}ms` } : undefined;
 
   return (
     <a
@@ -14,6 +15,7 @@ function Card({ post, index, reveal, compact }) {
       target="_blank"
       rel="noopener noreferrer"
       className={className}
+      style={style}
       aria-label={post.caption ? `Ver "${post.caption}" en Instagram` : 'Ver publicación en Instagram'}
     >
       <span className="frame" style={{ backgroundImage: `url(${post.cover})` }} />

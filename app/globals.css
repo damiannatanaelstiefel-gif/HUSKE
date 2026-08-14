@@ -36,8 +36,12 @@ img{max-width:100%;display:block;}
 .wrap{max-width:1220px;margin:0 auto;padding:0 32px;}
 @media (max-width:640px){.wrap{padding:0 20px;}}
 
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
-.reveal.in{opacity:1;transform:translateY(0);}
+.reveal{
+  opacity:0;transform:translateY(28px) scale(0.985);
+  transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);
+  will-change:opacity,transform;
+}
+.reveal.in{opacity:1;transform:translateY(0) scale(1);}
 
 nav{
   position:sticky;top:0;z-index:50;
