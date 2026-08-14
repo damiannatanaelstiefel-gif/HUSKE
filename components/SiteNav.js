@@ -8,7 +8,7 @@ export default function SiteNav() {
         <div className="navlinks">
           <a href="/#bodas">Bodas</a>
           <a href="/#xv">XV Años</a>
-          <a href="/#nosotros">Nosotros</a>
+          <a href="/nosotros">Nosotros</a>
           <a href="/#contacto">Contacto</a>
         </div>
         <a
