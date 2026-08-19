@@ -65,20 +65,21 @@ export default async function HomePage({ searchParams }) {
           <div className="chapter-head reveal">
             <h1 className="chapter-title">Bodas</h1>
           </div>
+
+          <div className="summary-video-wrap reveal">
+            <ClickToPlayVideo
+              src="/resumen-bodas.mp4"
+              poster="/resumen-bodas-poster.jpg"
+              label="Ver ejemplo"
+            />
+          </div>
+
           <PostGrid
             posts={bodas}
             emptyLabel="Todavía no hay publicaciones etiquetadas #huskebodas"
             preview={{ type: 'last', count: 4 }}
             size="medium"
           />
-
-          <div className="summary-video-wrap reveal">
-            <ClickToPlayVideo
-              src="/resumen-bodas.mp4"
-              poster="/resumen-bodas-poster.jpg"
-              label="Ver videominuto"
-            />
-          </div>
         </div>
       </section>
 
@@ -87,20 +88,21 @@ export default async function HomePage({ searchParams }) {
           <div className="chapter-head reveal">
             <h1 className="chapter-title">XV Años</h1>
           </div>
+
+          <div className="summary-video-wrap reveal">
+            <ClickToPlayVideo
+              src="/resumen-xv.mp4"
+              poster="/resumen-xv-poster.jpg"
+              label="Ver ejemplo"
+            />
+          </div>
+
           <PostGrid
             posts={xv}
             emptyLabel="Todavía no hay publicaciones etiquetadas #huskexv"
             preview={{ type: 'last', count: 4 }}
             size="medium"
           />
-
-          <div className="summary-video-wrap reveal">
-            <ClickToPlayVideo
-              src="/resumen-xv.mp4"
-              poster="/resumen-xv-poster.jpg"
-              label="Ver resumen de 2 minutos"
-            />
-          </div>
 
           <div className="subsection reveal">
             <h2 className="subsection-title">Books</h2>
