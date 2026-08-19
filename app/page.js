@@ -5,6 +5,7 @@ import HeroVideo from '../components/HeroVideo';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 import WhatsAppLinks from '../components/WhatsAppLinks';
+import ClickToPlayVideo from '../components/ClickToPlayVideo';
 
 export const revalidate = 300;
 
@@ -70,6 +71,14 @@ export default async function HomePage({ searchParams }) {
             preview={{ type: 'last', count: 4 }}
             size="medium"
           />
+
+          <div className="summary-video-wrap reveal">
+            <ClickToPlayVideo
+              src="/resumen-bodas.mp4"
+              poster="/resumen-bodas-poster.jpg"
+              label="Ver videominuto"
+            />
+          </div>
         </div>
       </section>
 
@@ -84,6 +93,14 @@ export default async function HomePage({ searchParams }) {
             preview={{ type: 'last', count: 4 }}
             size="medium"
           />
+
+          <div className="summary-video-wrap reveal">
+            <ClickToPlayVideo
+              src="/resumen-xv.mp4"
+              poster="/resumen-xv-poster.jpg"
+              label="Ver resumen de 2 minutos"
+            />
+          </div>
 
           <div className="subsection reveal">
             <h2 className="subsection-title">Books</h2>
