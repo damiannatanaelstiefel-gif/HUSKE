@@ -249,7 +249,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;}
 .summary-video-trigger{
   position:relative;overflow:hidden;
   display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
-  width:100%;max-width:640px;min-height:180px;
+  width:100%;min-height:180px;
   border:1px solid var(--line);border-radius:2px;
   padding:48px 24px;
   background:var(--card);
@@ -273,7 +273,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;}
 }
 .summary-video-trigger:has(img) .summary-video-label{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);}
 .summary-video video{
-  width:100%;max-width:640px;display:block;margin:0 auto;
+  width:100%;display:block;margin:0 auto;
   border-radius:2px;background:#000;
 }
 
