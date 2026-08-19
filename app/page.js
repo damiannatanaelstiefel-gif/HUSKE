@@ -18,23 +18,21 @@ export default async function HomePage({ searchParams }) {
       <SiteNav />
 
       <header className="hero" id="top">
-        <div className="wrap">
+        <div className="hero-bg">
+          <HeroVideo />
+          <div className="hero-overlay" />
+        </div>
+        <div className="wrap hero-content">
           <img className="logo-big reveal" src="/logo-black.png" alt="Huske" />
           <div className="eyebrow reveal">Rosario, Argentina</div>
           <p className="reveal">Recuerdos únicos, cuidado profesional.</p>
-          <a className="btn-primary reveal" href="/nosotros">
-            Conócenos
-          </a>
-          <div className="hero-video reveal">
-            <HeroVideo />
-          </div>
-          <div className="contact-block reveal" id="contacto">
+          <div className="hero-cta-row reveal">
+            <a className="btn-primary" href="/nosotros">
+              Conócenos
+            </a>
             <a className="btn-primary" href="/agenda">
               Agenda tu evento
             </a>
-            <div className="contact-whatsapp">
-              <WhatsAppLinks />
-            </div>
           </div>
           <div className="hero-scroll reveal">
             <span>Explorar</span>
@@ -42,6 +40,12 @@ export default async function HomePage({ searchParams }) {
           </div>
         </div>
       </header>
+
+      <section className="contact-strip reveal" id="contacto">
+        <div className="wrap">
+          <WhatsAppLinks />
+        </div>
+      </section>
 
       {!connected && (
         <div className="wrap connect-note">
