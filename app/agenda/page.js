@@ -83,34 +83,52 @@ const XV_COMBOS = {
   },
 };
 
-function ComboGroup({ icon, title, mood, combos }) {
+function EventAccordion({ icon, title, mood, questions, combos }) {
   return (
-    <div className="service-group reveal">
-      <h2 className="service-group-title">
-        {icon} {title}
-      </h2>
-      <div className="combo-grid">
-        {[combos.basico, combos.estandar].map((combo) => (
-          <div className={`combo-card ${mood}`} key={combo.name}>
-            <div className="combo-name">{combo.name}</div>
-            <p className="combo-tagline">{combo.tagline}</p>
-            <ul className="combo-specs">
-              {combo.specs.map((spec) => (
-                <li key={spec.label}>
-                  <span className="combo-spec-label">{spec.label}</span>
-                  {spec.value}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+    <details className={`agenda-accordion ${mood}`}>
+      <summary className="agenda-accordion-summary">
+        <span>
+          {icon} {title}
+        </span>
+        <span className="agenda-accordion-chevron" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      </summary>
+
+      <div className="agenda-accordion-body">
+        <h3 className="agenda-accordion-subtitle">Contanos esto para armar tu propuesta</h3>
+        <ul className="agenda-list">
+          {questions.map((q) => (
+            <li key={q}>{q}</li>
+          ))}
+        </ul>
+
+        <h3 className="agenda-accordion-subtitle">Nuestros planes</h3>
+        <div className="combo-grid">
+          {[combos.basico, combos.estandar].map((combo) => (
+            <div className={`combo-card ${mood}`} key={combo.name}>
+              <div className="combo-name">{combo.name}</div>
+              <p className="combo-tagline">{combo.tagline}</p>
+              <ul className="combo-specs">
+                {combo.specs.map((spec) => (
+                  <li key={spec.label}>
+                    <span className="combo-spec-label">{spec.label}</span>
+                    {spec.value}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className={`combo-addon ${mood}`}>
+          <div className="combo-name">+ Edición en Vivo</div>
+          <p>{combos.edicionEnVivo.text}</p>
+          <p className="combo-addon-note">{combos.edicionEnVivo.note}</p>
+        </div>
       </div>
-      <div className={`combo-addon ${mood}`}>
-        <div className="combo-name">+ Edición en Vivo</div>
-        <p>{combos.edicionEnVivo.text}</p>
-        <p className="combo-addon-note">{combos.edicionEnVivo.note}</p>
-      </div>
-    </div>
+    </details>
   );
 }
 
@@ -121,42 +139,27 @@ export default function AgendaPage() {
 
       <section className="agenda">
         <div className="wrap agenda-wrap">
-          <h1 className="chapter-title reveal">Nuestros combos</h1>
+          <h1 className="chapter-title reveal">Hablemos de tu evento</h1>
           <p className="agenda-intro reveal">
-            Estos son los paquetes de foto y video que ofrecemos hoy. Para armar una cotización
-            precisa, contanos los detalles de tu evento más abajo.
+            ¿Querés que HUSKE sea parte de tu celebración? Desplegá tu categoría para ver qué
+            info necesitamos y los planes disponibles.
           </p>
 
-          <ComboGroup icon="💍" title="Bodas" mood="mood-bodas" combos={BODAS_COMBOS} />
-          <ComboGroup icon="✨" title="XV Años" mood="mood-xv" combos={XV_COMBOS} />
-        </div>
-      </section>
-
-      <section className="agenda agenda-followup">
-        <div className="wrap agenda-wrap">
-          <h2 className="chapter-title reveal">Hablemos de tu evento</h2>
-          <p className="agenda-intro reveal">
-            ¿Querés que HUSKE sea parte de tu celebración? Escribinos por WhatsApp y contanos un
-            poco sobre el evento. Estos datos nos ayudan a entender lo que necesitás y preparar
-            una propuesta a medida.
-          </p>
-
-          <div className="agenda-block mood-bodas reveal">
-            <h2 className="agenda-block-title">💍 Si es una boda</h2>
-            <ul className="agenda-list">
-              {WEDDING_QUESTIONS.map((q) => (
-                <li key={q}>{q}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="agenda-block mood-xv reveal">
-            <h2 className="agenda-block-title">✨ Si es un XV</h2>
-            <ul className="agenda-list">
-              {XV_QUESTIONS.map((q) => (
-                <li key={q}>{q}</li>
-              ))}
-            </ul>
+          <div className="reveal">
+            <EventAccordion
+              icon="💍"
+              title="Si es una boda"
+              mood="mood-bodas"
+              questions={WEDDING_QUESTIONS}
+              combos={BODAS_COMBOS}
+            />
+            <EventAccordion
+              icon="✨"
+              title="Si es un XV"
+              mood="mood-xv"
+              questions={XV_QUESTIONS}
+              combos={XV_COMBOS}
+            />
           </div>
 
           <p className="agenda-note reveal">

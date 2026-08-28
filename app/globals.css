@@ -225,27 +225,44 @@ nav{
 .agenda{padding:64px 0 96px;}
 .agenda-wrap{max-width:720px;margin:0 auto;}
 .agenda-wrap .chapter-title{text-wrap:balance;}
-.agenda-intro{color:var(--ink-soft);font-size:1.05rem;line-height:1.75;margin:24px 0 56px;max-width:60ch;}
-.agenda-block{margin-bottom:40px;padding:32px;border-left:3px solid var(--ink-soft);}
-.agenda-block.mood-bodas{background:color-mix(in srgb, var(--rose) 8%, var(--paper));border-left-color:var(--rose);}
-.agenda-block.mood-xv{background:color-mix(in srgb, var(--amber) 8%, var(--paper));border-left-color:var(--amber);}
-.agenda-block-title{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin:0 0 22px;}
+.agenda-intro{color:var(--ink-soft);font-size:1.05rem;line-height:1.75;margin:24px 0 48px;max-width:60ch;}
 .agenda-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
 .agenda-list li{position:relative;padding-left:20px;color:var(--ink-soft);font-size:0.95rem;line-height:1.6;}
 .agenda-list li::before{content:"";position:absolute;left:0;top:0.6em;width:6px;height:6px;border-radius:50%;background:var(--ink-soft);}
 .mood-bodas .agenda-list li::before{background:var(--rose);}
 .mood-xv .agenda-list li::before{background:var(--amber);}
-.agenda-note{color:var(--ink-soft);font-size:1rem;line-height:1.7;margin:0 0 56px;max-width:60ch;}
+.agenda-note{color:var(--ink-soft);font-size:1rem;line-height:1.7;margin:40px 0 56px;max-width:60ch;}
 .agenda-cta{text-align:center;padding-top:40px;border-top:1px solid var(--line);}
 .agenda-cta-text{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;margin:0 0 24px;color:var(--ink);text-wrap:balance;}
 
-.agenda-followup{padding-top:0;border-top:1px solid var(--line);margin-top:16px;}
-
-.service-group{margin-bottom:64px;}
-.service-group:last-child{margin-bottom:56px;}
-.service-group-title{
-  font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin:0 0 22px;
+.agenda-accordion{
+  margin-bottom:20px;border-radius:2px;overflow:hidden;
+  border:1px solid var(--line);
 }
+.agenda-accordion.mood-bodas{border-color:color-mix(in srgb, var(--rose) 35%, var(--line));}
+.agenda-accordion.mood-xv{border-color:color-mix(in srgb, var(--amber) 35%, var(--line));}
+.agenda-accordion-summary{
+  cursor:pointer;list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:24px 28px;
+  font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem;
+  background:var(--card);
+  transition:background .2s;
+}
+.agenda-accordion-summary::-webkit-details-marker{display:none;}
+.agenda-accordion-summary:hover{background:color-mix(in srgb, var(--ink) 5%, var(--card));}
+.agenda-accordion.mood-bodas .agenda-accordion-summary{background:color-mix(in srgb, var(--rose) 8%, var(--paper));}
+.agenda-accordion.mood-xv .agenda-accordion-summary{background:color-mix(in srgb, var(--amber) 8%, var(--paper));}
+.agenda-accordion-chevron{flex-shrink:0;width:18px;height:18px;color:var(--ink-soft);transition:transform .25s;}
+.agenda-accordion-chevron svg{width:100%;height:100%;}
+.agenda-accordion[open] .agenda-accordion-chevron{transform:rotate(180deg);}
+.agenda-accordion-body{padding:8px 28px 36px;}
+.agenda-accordion-subtitle{
+  font-size:0.76rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+  color:var(--ink-soft);margin:28px 0 18px;
+}
+.agenda-accordion-subtitle:first-child{margin-top:8px;}
+
 .combo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;}
 @media (max-width:640px){.combo-grid{grid-template-columns:1fr;}}
 .combo-card{
