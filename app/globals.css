@@ -239,6 +239,41 @@ nav{
 .agenda-cta{text-align:center;padding-top:40px;border-top:1px solid var(--line);}
 .agenda-cta-text{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;margin:0 0 24px;color:var(--ink);text-wrap:balance;}
 
+.agenda-followup{padding-top:0;border-top:1px solid var(--line);margin-top:16px;}
+
+.service-group{margin-bottom:64px;}
+.service-group:last-child{margin-bottom:56px;}
+.service-group-title{
+  font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin:0 0 22px;
+}
+.combo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;}
+@media (max-width:640px){.combo-grid{grid-template-columns:1fr;}}
+.combo-card{
+  padding:28px;border-radius:2px;
+  border:1px solid var(--line);border-top:3px solid var(--ink-soft);
+}
+.combo-card.mood-bodas{border-top-color:var(--rose);background:color-mix(in srgb, var(--rose) 5%, var(--paper));}
+.combo-card.mood-xv{border-top-color:var(--amber);background:color-mix(in srgb, var(--amber) 5%, var(--paper));}
+.combo-name{
+  font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;margin-bottom:10px;
+}
+.combo-tagline{color:var(--ink-soft);font-size:0.88rem;line-height:1.55;margin:0 0 20px;}
+.combo-specs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.combo-specs li{font-size:0.85rem;line-height:1.55;color:var(--ink);}
+.combo-spec-label{
+  display:block;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;
+  font-weight:600;color:var(--ink-soft);margin-bottom:2px;
+}
+.combo-addon{
+  padding:24px 28px;border-radius:2px;
+  border:1px dashed var(--line);
+}
+.combo-addon.mood-bodas{border-color:color-mix(in srgb, var(--rose) 45%, var(--line));}
+.combo-addon.mood-xv{border-color:color-mix(in srgb, var(--amber) 45%, var(--line));}
+.combo-addon p{color:var(--ink-soft);font-size:0.88rem;line-height:1.6;margin:0 0 10px;}
+.combo-addon p:last-child{margin-bottom:0;}
+.combo-addon-note{font-size:0.8rem !important;}
+
 footer{border-top:1px solid var(--line);padding:32px 0;}
 .footrow{
   display:flex;justify-content:center;align-items:center;
