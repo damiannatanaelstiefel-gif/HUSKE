@@ -1,9 +1,9 @@
 import './globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://huske.vercel.app'),
+  metadataBase: new URL('https://www.huske.com.ar'),
   title: 'HUSKE — Producciones',
-  description: 'Bodas, XV años y books — fotografía editorial en Argentina.',
+  description: 'EVENTOS SOCIALES — Recuerdos únicos, cuidado profesional.',
 };
 
 export default function RootLayout({ children }) {
